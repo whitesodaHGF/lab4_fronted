@@ -92,6 +92,7 @@ export default {
             .then(function(res) {
               that.init();
               that.$alert("修改成功！", { confirmButtonText: "OK" });
+              that.$router.replace("/CustomerList");
             })
             .catch(function(error) {
               console.log(error);

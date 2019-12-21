@@ -101,6 +101,7 @@ export default {
       that.$axios
         .getSalesStatistic()
         .then(function(res) {
+          console.log(res)
           that.list = res.data;
           that.list.forEach(item => {
             item.total = item.price * item.quantity;
@@ -126,21 +127,17 @@ export default {
       }
 
       delete this.form.date;
-      console.log(this.form);
       let that = this;
       let total=0;
       that.$axios
         .getSalesStatistic(that.form)
         .then(function(res) {
-          console.log(res);
           that.list = res.data;
           that.list.forEach(item => {
-            console.log(item)
             item.total = item.price * item.quantity;
             total += item.total;
           }); 
           that.total = total;
-          console.log(that.list)
         })
         .catch(function(error) {
           that.$alert("获取采购单列表失败! " + error.data.msg, "提示", {

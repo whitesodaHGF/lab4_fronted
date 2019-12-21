@@ -234,7 +234,7 @@ export default ({
     },
     // - 物流信息管理
     getLogisticInfos: (data) => {
-        return request('/ware/purchasing/logisticInfo', 'get', data)
+        return request('/ware/purchasing/logisticInfo/All', 'get', data)
     },
     getLogisticInfo: (data) => {
         return request('/ware/purchasing/logisticInfo', 'get', data)
